@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mm-design — Visual Reference</title>
+
+  <!-- Tokens -->
+  <link rel="stylesheet" href="tokens/colors.css">
+  <link rel="stylesheet" href="tokens/typography.css">
+  <link rel="stylesheet" href="tokens/spacing.css">
+
+  <!-- Components -->
+  <link rel="stylesheet" href="components/button/button.css">
+  <link rel="stylesheet" href="components/card/card.css">
+  <link rel="stylesheet" href="components/badge/badge.css">
+  <link rel="stylesheet" href="components/section-label/section-label.css">
+  <link rel="stylesheet" href="components/input/input.css">
+  <link rel="stylesheet" href="components/nav/nav.css">
+
+  <style>
+    /* ── Style-guide shell ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--mm-font-sans);
+      font-size: var(--mm-text-sm);
+      color: var(--mm-color-text-primary);
+      background: var(--mm-color-background);
+      line-height: var(--mm-leading-relaxed);
+    }
+    .wrap {
+      max-width: var(--mm-width-content);
+      margin: 0 auto;
+      padding: var(--mm-space-6) var(--mm-space-6) var(--mm-space-8);
+    }
+
+    /* Page title */
+    .page-title {
+      font-family: var(--mm-font-display);
+      font-size: var(--mm-text-3xl);
+      font-weight: var(--mm-weight-bold);
+      margin: 0 0 var(--mm-space-1);
+    }
+    .page-sub {
+      color: var(--mm-color-text-muted);
+      margin: 0 0 var(--mm-space-8);
+    }
+
+    /* Section */
+    section { margin-bottom: var(--mm-space-8); }
+    .section-header {
+      font-family: var(--mm-font-display);
+      font-size: var(--mm-text-2xl);
+      font-weight: var(--mm-weight-bold);
+      margin: 0 0 var(--mm-space-1);
+      padding-bottom: var(--mm-space-2);
+      border-bottom: 1px solid var(--mm-color-gray-200);
+    }
+    .section-desc {
+      color: var(--mm-color-text-muted);
+      font-size: var(--mm-text-xs);
+      margin: var(--mm-space-1) 0 var(--mm-space-4);
+    }
+
+    /* Sub-heading inside a section */
+    h3 {
+      font-family: var(--mm-font-sans);
+      font-size: var(--mm-text-sm);
+      font-weight: var(--mm-weight-semibold);
+      color: var(--mm-color-text-muted);
+      margin: var(--mm-space-5) 0 var(--mm-space-2);
+    }
+
+    /* Generic layout helpers */
+    .row     { display: flex; flex-wrap: wrap; gap: var(--mm-space-3); align-items: center; }
+    .row-top { display: flex; flex-wrap: wrap; gap: var(--mm-space-3); align-items: flex-start; }
+    .grid-4  { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--mm-space-3); }
+    .grid-5  { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--mm-space-4); }
+    .stack   { display: flex; flex-direction: column; gap: var(--mm-space-3); }
+
+    /* ── Color swatches ── */
+    .swatch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--mm-space-1);
+    }
+    .swatch__box {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--mm-radius-base);
+      border: 1px solid var(--mm-color-gray-200);
+    }
+    .swatch__hex {
+      font-family: var(--mm-font-mono);
+      font-size: 10px;
+      color: var(--mm-color-text-primary);
+    }
+    .swatch__name {
+      font-family: var(--mm-font-mono);
+      font-size: 9px;
+      color: var(--mm-color-text-muted);
+      text-align: center;
+      max-width: 80px;
+      word-break: break-all;
+    }
+
+    /* ── Spacing blocks ── */
+    .space-demo {
+      display: flex;
+      align-items: center;
+      gap: var(--mm-space-3);
+      margin-bottom: var(--mm-space-2);
+    }
+    .space-demo__block {
+      background: var(--mm-color-blue);
+      border-radius: var(--mm-radius-sm);
+      height: var(--mm-space-4);
+    }
+    .space-demo__label {
+      font-family: var(--mm-font-mono);
+      font-size: var(--mm-text-xs);
+      color: var(--mm-color-text-muted);
+      min-width: 9rem;
+    }
+
+    /* ── Typography samples ── */
+    .type-sample {
+      margin-bottom: var(--mm-space-3);
+    }
+    .type-sample small {
+      font-family: var(--mm-font-mono);
+      font-size: 10px;
+      color: var(--mm-color-text-muted);
+      display: block;
+      margin-top: var(--mm-space-0_5);
+    }
+
+    /* ── Icon grid ── */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: var(--mm-space-4);
+    }
+    .icon-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--mm-space-1);
+    }
+    .icon-cell img { display: block; }
+    .icon-cell span {
+      font-family: var(--mm-font-mono);
+      font-size: 9px;
+      color: var(--mm-color-text-muted);
+      text-align: center;
+    }
+
+    /* Card padding in this page */
+    .demo-card { padding: var(--mm-space-5); }
+    .demo-card h4 { margin: 0 0 var(--mm-space-1); font-size: var(--mm-text-sm); font-weight: var(--mm-weight-bold); }
+    .demo-card p  { margin: 0; font-size: var(--mm-text-xs); color: var(--mm-color-text-muted); }
+
+    /* Input width constraint */
+    .input-col { max-width: 360px; }
+    .input-col .mm-input { margin-bottom: var(--mm-space-3); }
+
+    /* Nav section: full bleed */
+    .nav-section { margin-left: calc(-1 * var(--mm-space-6)); margin-right: calc(-1 * var(--mm-space-6)); }
+
+    /* Animal role icon grid */
+    .animal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--mm-space-4);
+    }
+    .animal-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--mm-space-1);
+    }
+    .animal-cell__icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .animal-cell__label {
+      font-family: var(--mm-font-mono);
+      font-size: 10px;
+      color: var(--mm-color-text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <h1 class="page-title">mm-design</h1>
+  <p class="page-sub">Visual reference for the Miquel Matoses design system, extracted from cercol.team.</p>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 1. COLOR PALETTE -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Color palette</h2>
+    <p class="section-desc">Every --mm-color-* token rendered as a swatch.</p>
+
+    <h3>Brand</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-red)"></div><span class="swatch__hex">#cf3339</span><span class="swatch__name">--mm-color-red</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-blue)"></div><span class="swatch__hex">#0047ba</span><span class="swatch__name">--mm-color-blue</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-yellow)"></div><span class="swatch__hex">#f1c22f</span><span class="swatch__name">--mm-color-yellow</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-green)"></div><span class="swatch__hex">#427c42</span><span class="swatch__name">--mm-color-green</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-white)"></div><span class="swatch__hex">#ffffff</span><span class="swatch__name">--mm-color-white</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-black)"></div><span class="swatch__hex">#111111</span><span class="swatch__name">--mm-color-black</span></div>
+    </div>
+
+    <h3>Semantic</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-primary)"></div><span class="swatch__hex">#cf3339</span><span class="swatch__name">--mm-color-primary</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-primary-dark)"></div><span class="swatch__hex">#a8262b</span><span class="swatch__name">--mm-color-primary-dark</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-background)"></div><span class="swatch__hex">#ffffff</span><span class="swatch__name">--mm-color-background</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-surface)"></div><span class="swatch__hex">#ffffff</span><span class="swatch__name">--mm-color-surface</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-border)"></div><span class="swatch__hex">#d4d4d4</span><span class="swatch__name">--mm-color-border</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-text-primary)"></div><span class="swatch__hex">#111111</span><span class="swatch__name">--mm-color-text-primary</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-text-muted)"></div><span class="swatch__hex">#666666</span><span class="swatch__name">--mm-color-text-muted</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-success)"></div><span class="swatch__hex">#427c42</span><span class="swatch__name">--mm-color-success</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-warning)"></div><span class="swatch__hex">#f1c22f</span><span class="swatch__name">--mm-color-warning</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-error)"></div><span class="swatch__hex">#cf3339</span><span class="swatch__name">--mm-color-error</span></div>
+    </div>
+
+    <h3>Roles R01-R12</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r01)"></div><span class="swatch__hex">#cf3339</span><span class="swatch__name">R01 Dolphin</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r02)"></div><span class="swatch__hex">#d46010</span><span class="swatch__name">R02 Wolf</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r03)"></div><span class="swatch__hex">#c08800</span><span class="swatch__name">R03 Elephant</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r04)"></div><span class="swatch__hex">#6a8800</span><span class="swatch__name">R04 Owl</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r05)"></div><span class="swatch__hex">#427c42</span><span class="swatch__name">R05 Eagle</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r06)"></div><span class="swatch__hex">#1a8c60</span><span class="swatch__name">R06 Falcon</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r07)"></div><span class="swatch__hex">#0d8888</span><span class="swatch__name">R07 Octopus</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r08)"></div><span class="swatch__hex">#1a68b0</span><span class="swatch__name">R08 Tortoise</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r09)"></div><span class="swatch__hex">#3355c8</span><span class="swatch__name">R09 Bee</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r10)"></div><span class="swatch__hex">#6630a8</span><span class="swatch__name">R10 Bear</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r11)"></div><span class="swatch__hex">#a030a0</span><span class="swatch__name">R11 Fox</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-role-r12)"></div><span class="swatch__hex">#b03070</span><span class="swatch__name">R12 Badger</span></div>
+    </div>
+
+    <h3>Domains</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-domain-presence)"></div><span class="swatch__hex">#fbbf24</span><span class="swatch__name">presence</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-domain-bond)"></div><span class="swatch__hex">#10b981</span><span class="swatch__name">bond</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-domain-vision)"></div><span class="swatch__hex">#427c42</span><span class="swatch__name">vision</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-domain-discipline)"></div><span class="swatch__hex">#2563eb</span><span class="swatch__name">discipline</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-domain-depth)"></div><span class="swatch__hex">#ef4444</span><span class="swatch__name">depth</span></div>
+    </div>
+
+    <h3>Balance status</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-balance-good-bg)"></div><span class="swatch__hex">#f0fdf4</span><span class="swatch__name">good-bg</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-balance-good-text)"></div><span class="swatch__hex">#166534</span><span class="swatch__name">good-text</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-balance-caution-bg)"></div><span class="swatch__hex">#fef9c3</span><span class="swatch__name">caution-bg</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-balance-caution-text)"></div><span class="swatch__hex">#854d0e</span><span class="swatch__name">caution-text</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-balance-warning-bg)"></div><span class="swatch__hex">#fee2e2</span><span class="swatch__name">warning-bg</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-balance-warning-text)"></div><span class="swatch__hex">#991b1b</span><span class="swatch__name">warning-text</span></div>
+    </div>
+
+    <h3>Report UI</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-arc-bar)"></div><span class="swatch__hex">#0047ba</span><span class="swatch__name">arc-bar</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-arc-label)"></div><span class="swatch__hex">#0047ba</span><span class="swatch__name">arc-label</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-self-bar)"></div><span class="swatch__hex">#9ca3af</span><span class="swatch__name">self-bar</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-track-bg)"></div><span class="swatch__hex">#f3f4f6</span><span class="swatch__name">track-bg</span></div>
+    </div>
+
+    <h3>Interactive</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-hover-bg)"></div><span class="swatch__hex">#e8eef8</span><span class="swatch__name">hover-bg</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-focus-ring)"></div><span class="swatch__hex">#99b3e0</span><span class="swatch__name">focus-ring</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-hover-text)"></div><span class="swatch__hex">#003090</span><span class="swatch__name">hover-text</span></div>
+    </div>
+
+    <h3>Gray scale</h3>
+    <div class="grid-4">
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-50)"></div><span class="swatch__hex">#f9fafb</span><span class="swatch__name">gray-50</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-100)"></div><span class="swatch__hex">#f3f4f6</span><span class="swatch__name">gray-100</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-200)"></div><span class="swatch__hex">#e5e7eb</span><span class="swatch__name">gray-200</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-300)"></div><span class="swatch__hex">#d1d5db</span><span class="swatch__name">gray-300</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-400)"></div><span class="swatch__hex">#9ca3af</span><span class="swatch__name">gray-400</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-500)"></div><span class="swatch__hex">#6b7280</span><span class="swatch__name">gray-500</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-600)"></div><span class="swatch__hex">#4b5563</span><span class="swatch__name">gray-600</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-700)"></div><span class="swatch__hex">#374151</span><span class="swatch__name">gray-700</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-800)"></div><span class="swatch__hex">#1f2937</span><span class="swatch__name">gray-800</span></div>
+      <div class="swatch"><div class="swatch__box" style="background:var(--mm-color-gray-900)"></div><span class="swatch__hex">#111827</span><span class="swatch__name">gray-900</span></div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 2. TYPOGRAPHY -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Typography</h2>
+    <p class="section-desc">Font families, size scale, weights, and letter spacing.</p>
+
+    <h3>Font families</h3>
+    <div class="type-sample" style="font-family:var(--mm-font-display); font-size:var(--mm-text-2xl);">Playfair Display — Display / Headings<small>--mm-font-display</small></div>
+    <div class="type-sample" style="font-family:var(--mm-font-sans); font-size:var(--mm-text-lg);">Roboto — Body / UI<small>--mm-font-sans</small></div>
+    <div class="type-sample" style="font-family:var(--mm-font-mono); font-size:var(--mm-text-base);">JetBrains Mono — Code / Tables<small>--mm-font-mono</small></div>
+
+    <h3>Size scale</h3>
+    <div class="type-sample" style="font-size:var(--mm-text-6xl); line-height:var(--mm-leading-tight);">6xl — 3.75rem<small>--mm-text-6xl (60px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-5xl); line-height:var(--mm-leading-tight);">5xl — 3rem<small>--mm-text-5xl (48px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-3xl);">3xl — 1.875rem<small>--mm-text-3xl (30px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-2xl);">2xl — 1.5rem<small>--mm-text-2xl (24px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-xl);">xl — 1.25rem<small>--mm-text-xl (20px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-lg);">lg — 1.125rem<small>--mm-text-lg (18px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-base);">base — 1rem<small>--mm-text-base (16px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-sm);">sm — 0.875rem<small>--mm-text-sm (14px)</small></div>
+    <div class="type-sample" style="font-size:var(--mm-text-xs);">xs — 0.75rem<small>--mm-text-xs (12px)</small></div>
+
+    <h3>Weights</h3>
+    <div class="row" style="gap:var(--mm-space-6); font-size:var(--mm-text-lg);">
+      <span style="font-weight:var(--mm-weight-normal);">Normal 400</span>
+      <span style="font-weight:var(--mm-weight-medium);">Medium 500</span>
+      <span style="font-weight:var(--mm-weight-semibold);">Semibold 600</span>
+      <span style="font-weight:var(--mm-weight-bold);">Bold 700</span>
+    </div>
+
+    <h3>Letter spacing</h3>
+    <div class="type-sample" style="letter-spacing:var(--mm-tracking-wide); text-transform:uppercase; font-size:var(--mm-text-xs); font-weight:var(--mm-weight-semibold);">tracking-wide — 0.025em<small>--mm-tracking-wide</small></div>
+    <div class="type-sample" style="letter-spacing:var(--mm-tracking-widest); text-transform:uppercase; font-size:var(--mm-text-xs); font-weight:var(--mm-weight-semibold);">tracking-widest — 0.1em<small>--mm-tracking-widest</small></div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 3. SPACING -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Spacing</h2>
+    <p class="section-desc">4px base unit. Each block width equals the token value.</p>
+
+    <div class="space-demo"><span class="space-demo__label">--mm-space-0_5 (2px)</span><div class="space-demo__block" style="width:var(--mm-space-0_5)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-1 (4px)</span><div class="space-demo__block" style="width:var(--mm-space-1)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-1_5 (6px)</span><div class="space-demo__block" style="width:var(--mm-space-1_5)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-2 (8px)</span><div class="space-demo__block" style="width:var(--mm-space-2)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-2_5 (10px)</span><div class="space-demo__block" style="width:var(--mm-space-2_5)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-3 (12px)</span><div class="space-demo__block" style="width:var(--mm-space-3)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-4 (16px)</span><div class="space-demo__block" style="width:var(--mm-space-4)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-5 (20px)</span><div class="space-demo__block" style="width:var(--mm-space-5)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-6 (24px)</span><div class="space-demo__block" style="width:var(--mm-space-6)"></div></div>
+    <div class="space-demo"><span class="space-demo__label">--mm-space-8 (32px)</span><div class="space-demo__block" style="width:var(--mm-space-8)"></div></div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 4. BUTTONS -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Buttons</h2>
+    <p class="section-desc">3 variants (primary, secondary, ghost) x 3 sizes (sm, md, lg) + disabled state.</p>
+
+    <h3>Primary</h3>
+    <div class="row">
+      <button class="mm-btn mm-btn--primary mm-btn--sm">Small</button>
+      <button class="mm-btn mm-btn--primary mm-btn--md">Medium</button>
+      <button class="mm-btn mm-btn--primary mm-btn--lg">Large</button>
+      <button class="mm-btn mm-btn--primary mm-btn--md" disabled>Disabled</button>
+    </div>
+
+    <h3>Secondary</h3>
+    <div class="row">
+      <button class="mm-btn mm-btn--secondary mm-btn--sm">Small</button>
+      <button class="mm-btn mm-btn--secondary mm-btn--md">Medium</button>
+      <button class="mm-btn mm-btn--secondary mm-btn--lg">Large</button>
+      <button class="mm-btn mm-btn--secondary mm-btn--md" disabled>Disabled</button>
+    </div>
+
+    <h3>Ghost</h3>
+    <div class="row">
+      <button class="mm-btn mm-btn--ghost mm-btn--sm">Small</button>
+      <button class="mm-btn mm-btn--ghost mm-btn--md">Medium</button>
+      <button class="mm-btn mm-btn--ghost mm-btn--lg">Large</button>
+      <button class="mm-btn mm-btn--ghost mm-btn--md" disabled>Disabled</button>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 5. CARDS -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Cards</h2>
+    <p class="section-desc">Default + 4 accent variants (3px colored left border).</p>
+
+    <div class="grid-5">
+      <div class="mm-card demo-card"><h4>Default</h4><p>1px gray border all around.</p></div>
+      <div class="mm-card mm-card--accent-red demo-card"><h4>Accent Red</h4><p>Brand red left border.</p></div>
+      <div class="mm-card mm-card--accent-blue demo-card"><h4>Accent Blue</h4><p>Brand blue left border.</p></div>
+      <div class="mm-card mm-card--accent-green demo-card"><h4>Accent Green</h4><p>Brand green left border.</p></div>
+      <div class="mm-card mm-card--accent-yellow demo-card"><h4>Accent Yellow</h4><p>Brand yellow left border.</p></div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 6. BADGES -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Badges</h2>
+    <p class="section-desc">4 variants for status and category labels.</p>
+
+    <div class="row">
+      <span class="mm-badge mm-badge--default">Default</span>
+      <span class="mm-badge mm-badge--beta">Beta</span>
+      <span class="mm-badge mm-badge--paid">Paid</span>
+      <span class="mm-badge mm-badge--free">Free</span>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 7. SECTION LABELS -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Section labels</h2>
+    <p class="section-desc">Uppercase eyebrow text with widest letter spacing. 5 color variants.</p>
+
+    <div class="stack">
+      <p class="mm-section-label mm-section-label--blue">Blue label</p>
+      <p class="mm-section-label mm-section-label--red">Red label</p>
+      <p class="mm-section-label mm-section-label--green">Green label</p>
+      <p class="mm-section-label mm-section-label--amber">Amber label</p>
+      <p class="mm-section-label mm-section-label--gray">Gray label</p>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 8. INPUTS -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Inputs</h2>
+    <p class="section-desc">Default state (click to see focus ring) and disabled.</p>
+
+    <div class="input-col">
+      <input class="mm-input" type="text" placeholder="Default — click to focus">
+      <input class="mm-input" type="text" value="With value" disabled>
+      <textarea class="mm-input" placeholder="Textarea variant"></textarea>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 9. NAVIGATION -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Navigation</h2>
+    <p class="section-desc">Full-width nav bar with brand blue background.</p>
+
+    <div class="nav-section">
+      <nav class="mm-nav">
+        <a href="#" class="mm-nav__logo">mm-design</a>
+        <ul class="mm-nav__links">
+          <li><a href="#" class="mm-nav__link mm-nav__link--active">Instruments</a></li>
+          <li><a href="#" class="mm-nav__link">Roles</a></li>
+          <li><a href="#" class="mm-nav__link">Science</a></li>
+          <li><a href="#" class="mm-nav__link">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <!-- 10. ICONS -->
+  <!-- ─────────────────────────────────────────────────────────────────── -->
+  <section>
+    <h2 class="section-header">Icons</h2>
+    <p class="section-desc">SVG icons at 24px and 48px. Animal icons listed by filename (require fill context).</p>
+
+    <h3>Moon phases</h3>
+    <div class="icon-grid">
+      <div class="icon-cell">
+        <img src="icons/moon/new-moon.svg" width="48" height="48" alt="New Moon">
+        <img src="icons/moon/new-moon.svg" width="24" height="24" alt="">
+        <span>new-moon</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/moon/first-quarter.svg" width="48" height="48" alt="First Quarter">
+        <img src="icons/moon/first-quarter.svg" width="24" height="24" alt="">
+        <span>first-quarter</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/moon/full-moon.svg" width="48" height="48" alt="Full Moon">
+        <img src="icons/moon/full-moon.svg" width="24" height="24" alt="">
+        <span>full-moon</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/moon/last-quarter.svg" width="48" height="48" alt="Last Quarter">
+        <img src="icons/moon/last-quarter.svg" width="24" height="24" alt="">
+        <span>last-quarter</span>
+      </div>
+    </div>
+
+    <h3>Dimensions</h3>
+    <div class="icon-grid">
+      <div class="icon-cell">
+        <img src="icons/dimension/presence.svg" width="48" height="48" alt="Presence">
+        <img src="icons/dimension/presence.svg" width="24" height="24" alt="">
+        <span>presence</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/dimension/bond.svg" width="48" height="48" alt="Bond">
+        <img src="icons/dimension/bond.svg" width="24" height="24" alt="">
+        <span>bond</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/dimension/vision.svg" width="48" height="48" alt="Vision">
+        <img src="icons/dimension/vision.svg" width="24" height="24" alt="">
+        <span>vision</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/dimension/depth.svg" width="48" height="48" alt="Depth">
+        <img src="icons/dimension/depth.svg" width="24" height="24" alt="">
+        <span>depth</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/dimension/discipline.svg" width="48" height="48" alt="Discipline">
+        <img src="icons/dimension/discipline.svg" width="24" height="24" alt="">
+        <span>discipline</span>
+      </div>
+    </div>
+
+    <h3>Functional UI</h3>
+    <div class="icon-grid">
+      <div class="icon-cell">
+        <img src="icons/ui/arrow-left.svg" width="48" height="48" alt="Arrow Left">
+        <img src="icons/ui/arrow-left.svg" width="24" height="24" alt="">
+        <span>arrow-left</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/arrow-right.svg" width="48" height="48" alt="Arrow Right">
+        <img src="icons/ui/arrow-right.svg" width="24" height="24" alt="">
+        <span>arrow-right</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/check.svg" width="48" height="48" alt="Check">
+        <img src="icons/ui/check.svg" width="24" height="24" alt="">
+        <span>check</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/x.svg" width="48" height="48" alt="X">
+        <img src="icons/ui/x.svg" width="24" height="24" alt="">
+        <span>x</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/chevron-right.svg" width="48" height="48" alt="Chevron Right">
+        <img src="icons/ui/chevron-right.svg" width="24" height="24" alt="">
+        <span>chevron-right</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/share.svg" width="48" height="48" alt="Share">
+        <img src="icons/ui/share.svg" width="24" height="24" alt="">
+        <span>share</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/user.svg" width="48" height="48" alt="User">
+        <img src="icons/ui/user.svg" width="24" height="24" alt="">
+        <span>user</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/globe.svg" width="48" height="48" alt="Globe">
+        <img src="icons/ui/globe.svg" width="24" height="24" alt="">
+        <span>globe</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/keyboard.svg" width="48" height="48" alt="Keyboard">
+        <img src="icons/ui/keyboard.svg" width="24" height="24" alt="">
+        <span>keyboard</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/info-circle.svg" width="48" height="48" alt="Info Circle">
+        <img src="icons/ui/info-circle.svg" width="24" height="24" alt="">
+        <span>info-circle</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/blind-spots.svg" width="48" height="48" alt="Blind Spots">
+        <img src="icons/ui/blind-spots.svg" width="24" height="24" alt="">
+        <span>blind-spots</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/hamburger.svg" width="48" height="48" alt="Hamburger">
+        <img src="icons/ui/hamburger.svg" width="24" height="24" alt="">
+        <span>hamburger</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/close.svg" width="48" height="48" alt="Close">
+        <img src="icons/ui/close.svg" width="24" height="24" alt="">
+        <span>close</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/external-link.svg" width="48" height="48" alt="External Link">
+        <img src="icons/ui/external-link.svg" width="24" height="24" alt="">
+        <span>external-link</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/info.svg" width="48" height="48" alt="Info">
+        <img src="icons/ui/info.svg" width="24" height="24" alt="">
+        <span>info</span>
+      </div>
+      <div class="icon-cell">
+        <img src="icons/ui/translation.svg" width="48" height="48" alt="Translation">
+        <img src="icons/ui/translation.svg" width="24" height="24" alt="">
+        <span>translation</span>
+      </div>
+    </div>
+
+    <h3>Animal role icons</h3>
+    <p style="font-size:var(--mm-text-xs); color:var(--mm-color-text-muted); margin-bottom:var(--mm-space-3);">Inline SVGs colored with their matching --mm-color-role-* token via currentColor.</p>
+    <div id="animal-grid" class="animal-grid"></div>
+  </section>
+
+</div><!-- .wrap -->
+
+<script>
+(function () {
+  var animals = [
+    { role: 'R01', file: 'cercol-icon-r01-dolphin.svg',  name: 'Dolphin',  color: 'var(--mm-color-role-r01)' },
+    { role: 'R02', file: 'cercol-icon-r02-wolf.svg',     name: 'Wolf',     color: 'var(--mm-color-role-r02)' },
+    { role: 'R03', file: 'cercol-icon-r03-elephant.svg',  name: 'Elephant', color: 'var(--mm-color-role-r03)' },
+    { role: 'R04', file: 'cercol-icon-r04-owl.svg',       name: 'Owl',      color: 'var(--mm-color-role-r04)' },
+    { role: 'R05', file: 'cercol-icon-r05-eagle.svg',     name: 'Eagle',    color: 'var(--mm-color-role-r05)' },
+    { role: 'R06', file: 'cercol-icon-r06-falcon.svg',    name: 'Falcon',   color: 'var(--mm-color-role-r06)' },
+    { role: 'R07', file: 'cercol-icon-r07-octopus.svg',   name: 'Octopus',  color: 'var(--mm-color-role-r07)' },
+    { role: 'R08', file: 'cercol-icon-r08-tortoise.svg',  name: 'Tortoise', color: 'var(--mm-color-role-r08)' },
+    { role: 'R09', file: 'cercol-icon-r09-bee.svg',       name: 'Bee',      color: 'var(--mm-color-role-r09)' },
+    { role: 'R10', file: 'cercol-icon-r10-bear.svg',      name: 'Bear',     color: 'var(--mm-color-role-r10)' },
+    { role: 'R11', file: 'cercol-icon-r11-fox.svg',       name: 'Fox',      color: 'var(--mm-color-role-r11)' },
+    { role: 'R12', file: 'cercol-icon-r12-badger.svg',    name: 'Badger',   color: 'var(--mm-color-role-r12)' }
+  ];
+
+  var grid = document.getElementById('animal-grid');
+
+  animals.forEach(function (a) {
+    var cell = document.createElement('div');
+    cell.className = 'animal-cell';
+
+    var iconWrap = document.createElement('div');
+    iconWrap.className = 'animal-cell__icon';
+    iconWrap.style.color = a.color;
+
+    var label = document.createElement('span');
+    label.className = 'animal-cell__label';
+    label.textContent = a.role + ' ' + a.name;
+
+    cell.appendChild(iconWrap);
+    cell.appendChild(label);
+    grid.appendChild(cell);
+
+    fetch('icons/animals/' + a.file)
+      .then(function (r) { return r.text(); })
+      .then(function (svg) {
+        iconWrap.innerHTML = svg;
+        var svgEl = iconWrap.querySelector('svg');
+        if (svgEl) {
+          svgEl.setAttribute('width', '64');
+          svgEl.setAttribute('height', '64');
+          svgEl.style.display = 'block';
+        }
+      });
+  });
+})();
+</script>
+</body>
+</html>
