@@ -81,11 +81,53 @@ Never use raw values in components — always reference a token.
 2. The page pulls in all token and component CSS files. No build needed — just refresh.
 3. To add a new section, edit `index.html` directly.
 
+## Icons
+
+The `icons/` directory contains 37 SVG icons across 4 families:
+
+- **moon/** (4 icons, 32×32) — phase icons: new-moon, first-quarter, full-moon, last-quarter
+- **dimension/** (5 icons, 24×24) — Big Five domain symbols: presence, bond, vision, depth, discipline
+- **animals/** (12 icons) — role animal silhouettes: R01 dolphin through R12 badger
+- **ui/** (16 icons, 24×24) — functional UI icons: arrows, check, close, share, user, globe, etc.
+- **react/MoonIcons.jsx** — React component exports for all icons, including `RoleIcon` and `DimensionIcon` wrappers
+
+### Icon rules
+
+- All consuming projects **must** source icons from this repo. Never create project-local icon files.
+- If a project needs a new icon, it **must** be added here first:
+  1. Add the SVG file to the appropriate family folder in `icons/`
+  2. Add the React export to `icons/react/MoonIcons.jsx`
+  3. Update `index.html` preview if relevant
+  4. Commit, then import in the consuming project
+- No external icon libraries (Lucide, Heroicons, Font Awesome, etc.) in any consuming project.
+- SVG icons use `currentColor` — color is set by the parent element.
+
+## JavaScript token exports
+
+`tokens/index.js` exports all design tokens as JavaScript objects for React/Vite consumers:
+
+```js
+import { colors, fonts, spacing, ROLE_COLORS, DOMAIN_COLORS } from 'mm-design/tokens/index.js'
+```
+
+This file is auto-derived from the JSON token files. Keep both in sync.
+
 ## Out of scope
 
-- No JavaScript logic in this repo (interactions, state, event handling belong in consuming projects).
-- No icons library — icons are managed per-project or via external icon sets.
+- No JavaScript logic beyond token exports and icon components (interactions, state, event handling belong in consuming projects).
 - No third-party dependencies — zero npm packages, zero CDN libs.
+
+## Cross-repo enforcement rules
+
+Every project that consumes mm-design **must** follow these rules (enforced via each project's CLAUDE.md):
+
+1. **Tokens**: All colors, fonts, spacing, and shadows come from mm-design. Never hardcode hex values.
+2. **Fonts**: Playfair Display (headings), Roboto (body), JetBrains Mono (code). No other fonts.
+3. **Icons**: All icons come from `mm-design/icons/`. If a new icon is needed, add it here first (SVG + React export), then import it in the consuming project.
+4. **Components**: Use mm-design CSS component classes (`.mm-btn`, `.mm-card`, etc.) where applicable.
+5. **README badges**: All shields.io badge hex colors must use the mm-design brand palette (see `tokens/badge-colors.md`):
+   - Red: `cf3339` · Blue: `0047ba` · Yellow: `f1c22f` · Green: `427c42` · Black: `111111`
+6. **No parallel design systems**: Never create local token files, color constants, or icon collections that duplicate mm-design.
 
 ## Consuming projects
 

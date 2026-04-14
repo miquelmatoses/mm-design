@@ -453,18 +453,18 @@ export function BlindSpotsIcon({ size = 24, className = '', style }) {
 // inherit currentColor and accept size/className/style like every other icon here.
 
 // Raw SVG imports — Vite resolves these at build time, zero runtime overhead
-import dolphinRaw    from '../assets/icons/animals/cercol-icon-r01-dolphin.svg?raw'
-import wolfRaw       from '../assets/icons/animals/cercol-icon-r02-wolf.svg?raw'
-import elephantRaw   from '../assets/icons/animals/cercol-icon-r03-elephant.svg?raw'
-import owlRaw        from '../assets/icons/animals/cercol-icon-r04-owl.svg?raw'
-import eagleRaw      from '../assets/icons/animals/cercol-icon-r05-eagle.svg?raw'
-import falconRaw     from '../assets/icons/animals/cercol-icon-r06-falcon.svg?raw'
-import octopusRaw    from '../assets/icons/animals/cercol-icon-r07-octopus.svg?raw'
-import tortoiseRaw   from '../assets/icons/animals/cercol-icon-r08-tortoise.svg?raw'
-import beeRaw        from '../assets/icons/animals/cercol-icon-r09-bee.svg?raw'
-import bearRaw       from '../assets/icons/animals/cercol-icon-r10-bear.svg?raw'
-import foxRaw        from '../assets/icons/animals/cercol-icon-r11-fox.svg?raw'
-import badgerRaw     from '../assets/icons/animals/cercol-icon-r12-badger.svg?raw'
+import dolphinRaw    from '../animals/cercol-icon-r01-dolphin.svg?raw'
+import wolfRaw       from '../animals/cercol-icon-r02-wolf.svg?raw'
+import elephantRaw   from '../animals/cercol-icon-r03-elephant.svg?raw'
+import owlRaw        from '../animals/cercol-icon-r04-owl.svg?raw'
+import eagleRaw      from '../animals/cercol-icon-r05-eagle.svg?raw'
+import falconRaw     from '../animals/cercol-icon-r06-falcon.svg?raw'
+import octopusRaw    from '../animals/cercol-icon-r07-octopus.svg?raw'
+import tortoiseRaw   from '../animals/cercol-icon-r08-tortoise.svg?raw'
+import beeRaw        from '../animals/cercol-icon-r09-bee.svg?raw'
+import bearRaw       from '../animals/cercol-icon-r10-bear.svg?raw'
+import foxRaw        from '../animals/cercol-icon-r11-fox.svg?raw'
+import badgerRaw     from '../animals/cercol-icon-r12-badger.svg?raw'
 
 /**
  * Extracts the viewBox attribute and the inner SVG content (the <g> element and
