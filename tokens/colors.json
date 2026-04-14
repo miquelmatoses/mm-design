@@ -1,11 +1,35 @@
 {
   "brand": {
-    "red":    "#cf3339",
-    "blue":   "#0047ba",
-    "yellow": "#f1c22f",
-    "green":  "#427c42",
-    "white":  "#ffffff",
-    "black":  "#111111"
+    "red": {
+      "hex": "#cf3339",
+      "rgb": [207, 51, 57],
+      "cmyk": [12, 91, 74, 3],
+      "pantone": "192 U"
+    },
+    "blue": {
+      "hex": "#0047ba",
+      "rgb": [0, 71, 186],
+      "cmyk": [96, 71, 0, 0],
+      "pantone": "2935U"
+    },
+    "yellow": {
+      "hex": "#f1c22f",
+      "rgb": [241, 194, 47],
+      "cmyk": [6, 23, 87, 0],
+      "pantone": "121U"
+    },
+    "green": {
+      "hex": "#427c42",
+      "rgb": [66, 124, 66],
+      "cmyk": [76, 29, 87, 14],
+      "pantone": "7740U"
+    },
+    "white": {
+      "hex": "#ffffff"
+    },
+    "black": {
+      "hex": "#111111"
+    }
   },
   "semantic": {
     "primary":     "#cf3339",
