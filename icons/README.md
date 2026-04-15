@@ -80,6 +80,34 @@ General-purpose interface icons. Stroke-based, `fill="none"`.
 | `external-link.svg` | `0 0 24 24` | 14px | External link indicator |
 | `info.svg` | `0 0 24 24` | 18px | Small informational hint |
 | `translation.svg` | `0 0 24 24` | 13px | Translation feedback |
+| `arrow-up-trend.svg` | `0 0 24 24` | 24px | Ranking position gain (chart trend) |
+| `arrow-down-trend.svg` | `0 0 24 24` | 24px | Ranking position loss (chart trend) |
+| `badge-new.svg` | `0 0 24 24` | 24px | New entry / debut indicator (starburst) |
+| `dash-stable.svg` | `0 0 24 24` | 24px | Stable position (horizontal dash) |
+| `icon-ranking.svg` | `0 0 24 24` | 24px | Navigation: ranking section (bar chart) |
+| `icon-artistes.svg` | `0 0 24 24` | 24px | Navigation: artist directory (two people) |
+| `icon-mapa.svg` | `0 0 24 24` | 24px | Navigation: geographic map (location pin) |
+| `icon-contribuir.svg` | `0 0 24 24` | 24px | User contribution action (circle + plus) |
+
+---
+
+## Territory badges — `icons/territories/`
+
+Heraldic-inspired badges for the 10 territories of the Catalan-speaking world.
+Simplified to read clearly at 24px. `fill="currentColor"`. ViewBox `0 0 24 24`.
+
+| File | Territory | Symbol |
+|---|---|---|
+| `territory-cat.svg` | Catalunya | Creu de Sant Jordi (Greek cross) |
+| `territory-val.svg` | País Valencià | Ratpenat (bat silhouette) |
+| `territory-bal.svg` | Illes Balears | Three island shapes |
+| `territory-ppcc.svg` | Països Catalans | Four squares in a circle |
+| `territory-cno.svg` | Catalunya del Nord | Canigó mountain with flame |
+| `territory-and.svg` | Andorra | Shield with cross |
+| `territory-fra.svg` | La Franja de Ponent | Diagonally divided rectangle |
+| `territory-alg.svg` | L'Alguer (Sardinia) | Island with waves |
+| `territory-car.svg` | El Carxe | Enclave (circle in circle) |
+| `territory-alt.svg` | Altres / Diaspora | Globe with meridians |
 
 ---
 

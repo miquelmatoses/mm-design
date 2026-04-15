@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <!-- País Valencià — Ratpenat (bat silhouette) -->
+  <!-- Simplified bat: body + spread wings -->
+  <path d="M12 6 C12 6 11.2 8 11.2 9.5 C11.2 10.5 11.6 11 12 11 C12.4 11 12.8 10.5 12.8 9.5 C12.8 8 12 6 12 6 Z"/>
+  <!-- Left wing -->
+  <path d="M11 9 C9.5 7.5 7 5.5 4 4 C4.5 6 5.5 8 6.5 9.5 C5.5 9 4 8.5 2 8.5 C3.5 10 5.5 11 7 11.5 C5.8 11.8 4.5 11.8 3 11.5 C4.5 13 7 13.5 9 13 C10 12.7 10.8 12 11.2 11 C11.2 10.5 11 9.5 11 9 Z"/>
+  <!-- Right wing (mirrored) -->
+  <path d="M13 9 C14.5 7.5 17 5.5 20 4 C19.5 6 18.5 8 17.5 9.5 C18.5 9 20 8.5 22 8.5 C20.5 10 18.5 11 17 11.5 C18.2 11.8 19.5 11.8 21 11.5 C19.5 13 17 13.5 15 13 C14 12.7 13.2 12 12.8 11 C12.8 10.5 13 9.5 13 9 Z"/>
+  <!-- Ears -->
+  <path d="M10.5 7 L9.8 5 L11 7.5 Z"/>
+  <path d="M13.5 7 L14.2 5 L13 7.5 Z"/>
+  <!-- Small feet/tail -->
+  <path d="M11 13 C11 14.5 11.5 16 12 17 C12.5 16 13 14.5 13 13 L12 13.5 Z"/>
+</svg>

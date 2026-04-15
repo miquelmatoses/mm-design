@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <!-- La Franja — Rectangle divided by diagonal line (border zone) -->
+  <!-- Left half (filled triangle) -->
+  <path d="M3 3 L21 3 L3 21 Z"/>
+  <!-- Right half outline only (unfilled to show the division) -->
+  <path d="M21 3 L21 21 L3 21 Z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <!-- El Carxe — Enclave: small filled circle inside a larger outlined circle -->
+  <!-- Outer circle (ring) -->
+  <path fill-rule="evenodd" d="M12 2 C6.48 2 2 6.48 2 12 C2 17.52 6.48 22 12 22 C17.52 22 22 17.52 22 12 C22 6.48 17.52 2 12 2 Z M12 4.5 C16.14 4.5 19.5 7.86 19.5 12 C19.5 16.14 16.14 19.5 12 19.5 C7.86 19.5 4.5 16.14 4.5 12 C4.5 7.86 7.86 4.5 12 4.5 Z"/>
+  <!-- Inner enclave dot -->
+  <circle cx="12" cy="12" r="3"/>
+</svg>

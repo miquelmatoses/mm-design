@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <!-- Andorra — Shield with mitre/cross from coat of arms -->
+  <!-- Shield outline (using evenodd for cutout) -->
+  <path fill-rule="evenodd" d="M4 3 L20 3 L20 14 C20 18.5 12 22 12 22 C12 22 4 18.5 4 14 Z M6 5 L6 14 C6 17 12 19.8 12 19.8 C12 19.8 18 17 18 14 L18 5 Z"/>
+  <!-- Cross inside shield -->
+  <rect x="10.8" y="7" width="2.4" height="9" rx="0.3"/>
+  <rect x="7.5" y="10" width="9" height="2.4" rx="0.3"/>
+</svg>

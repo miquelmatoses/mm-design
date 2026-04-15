@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+  <!-- Catalunya del Nord — Canigó mountain peak with flame -->
+  <!-- Mountain silhouette -->
+  <path d="M2 20 L10 8 L12 11 L14 8 L22 20 Z"/>
+  <!-- Flame at the peak -->
+  <path d="M12 3 C11 5 10.2 6 10.5 7.2 C10.8 8.2 11.5 8.5 12 7.5 C12 8.5 11.5 9.5 12 10 C12.8 9.5 13.5 8 13.5 7 C13.5 5.5 12.5 4 12 3 Z"/>
+</svg>
