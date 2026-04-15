@@ -94,7 +94,8 @@ General-purpose interface icons. Stroke-based, `fill="none"`.
 ## Territory badges — `icons/territories/`
 
 Heraldic-inspired badges for the 10 territories of the Catalan-speaking world.
-Simplified to read clearly at 24px. `fill="currentColor"`. ViewBox `0 0 24 24`.
+Illustrated by Gemini, vectorized with potrace. `fill="currentColor"`. ViewBox
+varies per illustration (original crop dimensions from the source sheet).
 
 | File | Territory | Symbol |
 |---|---|---|
