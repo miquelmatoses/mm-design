@@ -102,6 +102,13 @@ The `icons/` directory contains 37 SVG icons across 4 families:
 - No external icon libraries (Lucide, Heroicons, Font Awesome, etc.) in any consuming project.
 - SVG icons use `currentColor` — color is set by the parent element.
 
+**Exception — third-party brand logos:** OAuth provider logos (Google, Apple, GitHub, etc.)
+are exempt from this rule. These are regulated brand assets with fixed colors mandated by
+the provider's own brand guidelines — they cannot use `currentColor` and must not be
+adapted to the mm-design token palette. Inline SVG directly in the consuming component
+is acceptable and expected for OAuth buttons. Do **not** add them to `icons/` or
+`MoonIcons.jsx`.
+
 ## JavaScript token exports
 
 `tokens/index.js` exports all design tokens as JavaScript objects for React/Vite consumers:
