@@ -31,6 +31,12 @@
       "hex": "#111111"
     }
   },
+  "brandTints": {
+    "green":  "#eaf2ea",
+    "red":    "#fce8e9",
+    "blue":   "#e6ecf8",
+    "yellow": "#fdf6d9"
+  },
   "semantic": {
     "primary":     "#cf3339",
     "primaryDark": "#a8262b",

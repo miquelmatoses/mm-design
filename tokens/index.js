@@ -88,9 +88,18 @@ export const DOMAIN_ICON_CLASSES = {
 export const DOMAIN_BG_CLASSES = {
   presence:   'bg-amber-400',
   bond:       'bg-emerald-500',
-  vision:     `bg-[${colorsData.brand.green}]`,
+  vision:     `bg-[${colorsData.brandTints.green}]`,
   discipline: 'bg-blue-600',
   depth:      'bg-red-500',
+}
+
+// ── Brand tints (soft background variants) ───────────────────────────────────
+
+export const BRAND_TINTS = {
+  green:  colorsData.brandTints.green,
+  red:    colorsData.brandTints.red,
+  blue:   colorsData.brandTints.blue,
+  yellow: colorsData.brandTints.yellow,
 }
 
 // ── Balance status colors ────────────────────────────────────────────────────

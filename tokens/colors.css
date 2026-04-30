@@ -11,6 +11,12 @@
   --mm-color-white:  #ffffff;
   --mm-color-black:  #111111;
 
+  /* ── Brand tints — soft background variants (2.1b) ── */
+  --mm-color-green-tint:  #eaf2ea;
+  --mm-color-red-tint:    #fce8e9;
+  --mm-color-blue-tint:   #e6ecf8;
+  --mm-color-yellow-tint: #fdf6d9;
+
   /* ── Semantic aliases (2.2) ── */
   --mm-color-primary:      #cf3339;
   --mm-color-primary-dark:  #a8262b;
