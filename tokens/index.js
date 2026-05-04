@@ -10,16 +10,24 @@ import colorsData from './colors.json' with { type: 'json' }
 import typographyData from './typography.json' with { type: 'json' }
 import spacingData from './spacing.json' with { type: 'json' }
 
-// ── Brand & semantic colors (flat object matching cercol's `colors` export) ──
+// ── Brand hex helper — brand colors are rich objects; .hex gives the CSS string ──
+
+const _b = colorsData.brand
+
+// ── Brand & semantic colors (flat object — all values are CSS-ready hex strings) ──
+//
+// Brand palette values are always the .hex string from the rich color object.
+// This keeps `style={{ backgroundColor: colors.blue }}` working everywhere.
+// Use BRAND_COLOR_DATA for the full {hex, rgb, cmyk, pantone} objects.
 
 export const colors = {
-  // Brand palette
-  red:         colorsData.brand.red,
-  blue:        colorsData.brand.blue,
-  yellow:      colorsData.brand.yellow,
-  green:       colorsData.brand.green,
-  white:       colorsData.brand.white,
-  black:       colorsData.brand.black,
+  // Brand palette (hex strings)
+  red:         _b.red.hex,
+  blue:        _b.blue.hex,
+  yellow:      _b.yellow.hex,
+  green:       _b.green.hex,
+  white:       _b.white.hex,
+  black:       _b.black.hex,
 
   // Semantic aliases
   primary:     colorsData.semantic.primary,
@@ -44,11 +52,23 @@ export const colors = {
   trackBg:     colorsData.report.trackBg,
 
   // Big Five dimension colors (legacy naming for cercol compatibility)
-  openness:          colorsData.brand.blue,
-  conscientiousness: colorsData.brand.yellow,
-  extraversion:      colorsData.brand.red,
-  agreeableness:     colorsData.brand.green,
-  neuroticism:       colorsData.brand.black,
+  openness:          _b.blue.hex,
+  conscientiousness: _b.yellow.hex,
+  extraversion:      _b.red.hex,
+  agreeableness:     _b.green.hex,
+  neuroticism:       _b.black.hex,
+}
+
+// ── Rich brand color data (full objects with hex, rgb, cmyk, pantone) ────────
+// Use when you need more than the CSS hex string (e.g. print workflows).
+
+export const BRAND_COLOR_DATA = {
+  red:    _b.red,
+  blue:   _b.blue,
+  yellow: _b.yellow,
+  green:  _b.green,
+  white:  _b.white,
+  black:  _b.black,
 }
 
 // ── Typography ───────────────────────────────────────────────────────────────
@@ -79,7 +99,7 @@ export const DOMAIN_COLORS = {
 export const DOMAIN_ICON_CLASSES = {
   presence:   'text-amber-400',
   bond:       'text-emerald-500',
-  vision:     `text-[${colorsData.brand.green}]`,
+  vision:     `text-[${_b.green.hex}]`,
   discipline: 'text-blue-600',
   depth:      'text-red-500',
 }
