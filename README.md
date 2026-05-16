@@ -125,6 +125,61 @@ import 'mm-design/components/button/button.css'
 
 ---
 
+## Font provisioning
+
+Starting from v0.2.0, mm-design exposes font family names via CSS
+custom properties (`--mm-font-display`, `--mm-font-sans`,
+`--mm-font-mono`) but does NOT ship the font files. This keeps the
+package free of external dependencies and lets each consumer choose
+how to serve fonts according to their stack.
+
+Consumers must provide:
+
+- **Playfair Display** (weights 400, 700) — used by `--mm-font-display`
+- **Roboto** (weights 400, 500, 700) — used by `--mm-font-sans`
+- **JetBrains Mono** (any weight) — used by `--mm-font-mono`
+
+### Recommended: self-host via @fontsource
+
+```bash
+npm install @fontsource/playfair-display @fontsource/roboto @fontsource/jetbrains-mono
+```
+
+```css
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/500.css";
+@import "@fontsource/roboto/700.css";
+@import "@fontsource/jetbrains-mono/400.css";
+```
+
+Serves fonts from the same origin with `font-display: swap` by
+default. Eliminates render-blocking requests to external CDNs.
+
+### Alternative: Google Fonts CDN
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&family=JetBrains+Mono&display=swap">
+```
+
+Simpler but adds an external dependency and a render-blocking
+request that slows first paint, especially on mobile. The
+`preconnect` hints reduce the cost.
+
+### Migration from v0.1.x
+
+Previous versions auto-loaded the fonts from Google Fonts via an
+`@import` inside `typography.css`. Consumers that relied on that
+behavior must now declare the fonts themselves using one of the
+methods above. Failing to do so causes the browser to fall back to
+Georgia / system-ui / monospace.
+
+---
+
 ## Components
 
 Every component is a `.css` file + `.html` example. No JavaScript. CSS classes use the `mm-` prefix.

@@ -30,6 +30,5 @@
   "letterSpacing": {
     "wide":   "0.025em",
     "widest": "0.1em"
-  },
-  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+  }
 }
