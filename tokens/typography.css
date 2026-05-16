@@ -2,7 +2,12 @@
    Source: DESIGN_AUDIT.md section 3
    Naming: --mm-font-*, --mm-text-*, --mm-weight-*, --mm-leading-*, --mm-tracking-* */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+/* Font provisioning is the consumer's responsibility (see README).
+ * mm-design exposes font family names via the --mm-font-* custom
+ * properties below, but does NOT load the font files. This keeps
+ * the package free of external dependencies and lets each consumer
+ * choose how to serve fonts (self-hosted via @fontsource,
+ * Google Fonts CDN with preconnect, or any other method). */
 
 :root {
   /* ── Font families (3.1) ── */
