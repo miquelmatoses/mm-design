@@ -19,3 +19,9 @@ Desktop.ini
 
 # Source/working files
 input/
+
+# Claude Code (autoconsum, no es trackeja)
+# CLAUDE.md sí es trackeja: és el source of truth del design system
+.claude/
+.claude.json
+/CLAUDE_*.md
